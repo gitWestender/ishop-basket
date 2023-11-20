@@ -1,13 +1,20 @@
 package com.javalearning.basket.models;
 
-public class Basket {
-    private final int productID;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
-    public Basket(int productID) {
-        this.productID = productID;
+import java.util.List;
+
+@Component
+@SessionScope
+public class Basket {
+    private List<Integer> basketIDs;
+
+    public Basket(List<Integer> basketIDs) {
+        this.basketIDs = basketIDs;
     }
 
-    public Integer getProductID() {
-        return productID;
+    public List<Integer> getBasketIDs() {
+        return basketIDs;
     }
 }

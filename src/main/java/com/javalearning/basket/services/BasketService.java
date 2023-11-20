@@ -9,24 +9,22 @@ import org.springframework.web.context.annotation.SessionScope;
 import java.util.List;
 
 @Service
-@SessionScope
 public class BasketService implements IBasketService {
 
-    private final List<Integer> productID;
+    private final Basket basket;
 
-    public BasketService(List<Integer> productID) {
-        this.productID = productID;
+    public BasketService(Basket basket) {
+        this.basket = basket;
     }
 
     @Override
-    public Basket addProduct(Integer id) {
-        Basket temp = new Basket(id);
-        productID.add(temp.getProductID());
-        return temp;
+    public Basket addToCard(Integer id) {
+        basket.getBasketIDs().add(id);
+        return basket;
     }
 
     @Override
     public List<Integer> getBasketInfo() {
-        return productID;
+        return basket.getBasketIDs();
     }
 }

@@ -5,6 +5,6 @@ import com.javalearning.basket.models.Basket;
 import java.util.List;
 
 public interface IBasketService {
-    Basket addProduct(Integer id);
+    Basket addToCard(Integer id);
     List<Integer> getBasketInfo();
 }
