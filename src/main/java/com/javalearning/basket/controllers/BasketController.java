@@ -4,6 +4,7 @@ import com.javalearning.basket.interfaces.IBasketService;
 import com.javalearning.basket.models.Basket;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,6 +21,11 @@ public class BasketController {
     @GetMapping("/add")
     public Basket addProduct(int id) {
         return iBasketService.addToCard(id);
+    }
+
+    @GetMapping("/addItems")
+    public List<Integer> addProducts(@RequestParam List<Integer> ids) {
+        return iBasketService.addItemsToCart(ids);
     }
 
     @GetMapping("/get")

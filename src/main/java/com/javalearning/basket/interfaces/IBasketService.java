@@ -7,4 +7,5 @@ import java.util.List;
 public interface IBasketService {
     Basket addToCard(Integer id);
     List<Integer> getBasketInfo();
+    List<Integer> addItemsToCart(List<Integer> ids);
 }
