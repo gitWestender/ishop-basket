@@ -1,11 +1,9 @@
 package com.javalearning.basket.interfaces;
 
-import com.javalearning.basket.models.Basket;
-
 import java.util.List;
 
 public interface IBasketService {
-    Basket addToCard(Integer id);
-    List<Integer> getBasketInfo();
-    List<Integer> addItemsToCart(List<Integer> ids);
+    Integer addProductToCard(Integer id);
+    List<Integer> getProducts();
+    List<Integer> addProductsToCart(List<Integer> ids);
 }

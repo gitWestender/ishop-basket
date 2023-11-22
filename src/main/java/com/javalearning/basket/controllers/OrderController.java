@@ -11,25 +11,25 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/order")
-public class BasketController {
+public class OrderController {
     private final IBasketService iBasketService;
 
-    public BasketController(IBasketService iBasketService) {
+    public OrderController(IBasketService iBasketService) {
         this.iBasketService = iBasketService;
     }
 
     @GetMapping("/add")
-    public Basket addProduct(int id) {
-        return iBasketService.addToCard(id);
+    public Integer addProduct(@RequestParam int id) {
+        return iBasketService.addProductToCard(id);
     }
 
     @GetMapping("/addItems")
     public List<Integer> addProducts(@RequestParam List<Integer> ids) {
-        return iBasketService.addItemsToCart(ids);
+        return iBasketService.addProductsToCart(ids);
     }
 
     @GetMapping("/get")
-    public List<Integer> getBasket() {
-        return iBasketService.getBasketInfo();
+    public List<Integer> getPoducts() {
+        return iBasketService.getProducts();
     }
 }

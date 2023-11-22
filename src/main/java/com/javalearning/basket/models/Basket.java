@@ -8,14 +8,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Repository
+@Component
 @SessionScope
 public class Basket {
     private List<Integer> basketIDs = new ArrayList<>();
 
-/*    public Basket(List<Integer> basketIDs) {
-        this.basketIDs = basketIDs;
-    }*/
     public List<Integer> addStore(Integer items) {
         basketIDs.add(items);
         return basketIDs;

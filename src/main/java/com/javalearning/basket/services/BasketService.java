@@ -16,13 +16,13 @@ public class BasketService implements IBasketService {
     private Basket basket;
 
     @Override
-    public Basket addToCard(Integer id) {
+    public Integer addProductToCard(Integer id) {
         basket.addStore(id);
-        return basket;
+        return id;
     }
 
     @Override
-    public List<Integer> addItemsToCart(List<Integer> ids) {
+    public List<Integer> addProductsToCart(List<Integer> ids) {
         for (Integer id : ids) {
             basket.addStore(id);
         }
@@ -30,7 +30,7 @@ public class BasketService implements IBasketService {
     }
 
     @Override
-    public List<Integer> getBasketInfo() {
+    public List<Integer> getProducts() {
         return basket.getBasketIDs();
     }
 }
