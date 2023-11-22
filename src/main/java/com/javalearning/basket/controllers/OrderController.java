@@ -17,15 +17,15 @@ public class OrderController {
     public OrderController(IBasketService iBasketService) {
         this.iBasketService = iBasketService;
     }
-
+/*
     @GetMapping("/add")
     public Integer addProduct(@RequestParam int id) {
         return iBasketService.addProductToCard(id);
-    }
+    }*/
 
-    @GetMapping("/addItems")
-    public List<Integer> addProducts(@RequestParam List<Integer> ids) {
-        return iBasketService.addProductsToCart(ids);
+    @GetMapping("/add")
+    public void addProducts(@RequestParam List<Integer> ids) {
+        iBasketService.addProductsToCart(ids);
     }
 
     @GetMapping("/get")

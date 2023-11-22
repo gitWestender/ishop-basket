@@ -15,11 +15,11 @@ public class BasketService implements IBasketService {
     @Autowired
     private Basket basket;
 
-    @Override
+/*    @Override
     public Integer addProductToCard(Integer id) {
         basket.addStore(id);
         return id;
-    }
+    }*/
 
     @Override
     public List<Integer> addProductsToCart(List<Integer> ids) {
